@@ -1,0 +1,15 @@
+playwright
+pytest
+pytest-playwright
+pytest-html
+pytest-order
+pytest-dependency
+pytest-xdist
+pytest-rerunfailures
+pytest-timeout
+allure-pytest
+behave
+openpyxl
+pathlib
+pytest-bdd
+webdriver-manager
