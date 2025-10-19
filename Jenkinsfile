@@ -21,7 +21,7 @@ pipeline {
                 steps {
 
 
-                    bat 'playwright install chromium && pytest -v'
+                    bat 'pip install playwright && playwright install chromium && pytest -v'
 
                 }
 
