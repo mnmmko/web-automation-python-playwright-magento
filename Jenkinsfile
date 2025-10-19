@@ -21,7 +21,7 @@ pipeline {
                 steps {
 
 
-                    bat 'pytest -v'
+                    bat 'playwright install && pytest -v'
 
                 }
 
