@@ -12,7 +12,11 @@ pipeline {
             steps {
 
 
-                bat 'python -m pip install --upgrade pip && pip install -r requirements.txt'
+              bat '''
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
+                python -m playwright install chromium
+                '''
 
             }
         }
@@ -21,11 +25,17 @@ pipeline {
                 steps {
 
 
-                    bat 'pip install playwright && playwright install chromium && pytest -v'
+                    bat 'pytest -v --html=report.html --self-contained-html'
 
                 }
 
       }
           }
+
+    post {
+      always {
+            archiveArtifacts artifacts: 'report.html', fingerprint: true
+        }
+    }
 
 }

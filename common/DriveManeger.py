@@ -10,7 +10,7 @@ class DriverManager:
     def start_browser(cls, headless=False):
         if cls._browser is None:
             cls._playwright = sync_playwright().start()
-            cls._browser = cls._playwright.chromium.launch(headless=headless)
+            cls._browser = cls._playwright.chromium.launch(headless=True)
             cls._context = cls._browser.new_context(
                 ignore_https_errors=True,
                 viewport={"width": 1920, "height": 1080}  # maximize
